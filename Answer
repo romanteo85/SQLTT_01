@@ -1,0 +1,5 @@
+--Вариант решения
+SELECT  * FROM	"Customers" WHERE	"Customers"."CustomerId" IN (
+SELECT	"Purchases"."CustomerId" FROM	"Purchases" WHERE	"Purchases"."ProductName" = 'молоко'
+EXCEPT
+SELECT	"Purchases"."CustomerId" FROM	"Purchases" WHERE	"Purchases"."ProductName" = 'сметана');
